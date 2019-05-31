@@ -22,40 +22,40 @@ const newRect = new Rectangle(400, 800);
 //== Declarative and obvious which class inherits from which
 //== CLASSES ARE JUST FUNCTIONS! :D
 
-class Animal {
-  constructor(name) {
-    this.name = name;
-  }
-  speak() {
-    console.log(`${this.name} says, 'Hello'`);
-  }
-}
+// class Animal {
+//   constructor(name) {
+//     this.name = name;
+//   }
+//   speak() {
+//     console.log(`${this.name} says, 'Hello'`);
+//   }
+// }
 
-class Dog extends Animal {
-  constructor(name) {
-    super(name);
-  }
-  speak() {
-    console.log(`${this.name} says, Borked!`);
-  }
-}
+// class Dog extends Animal {
+//   constructor(name) {
+//     super(name);
+//   }
+//   speak() {
+//     console.log(`${this.name} says, Borked!`);
+//   }
+// }
 
-class Cat extends Animal {
-  constructor(name) {
-    super(name);
-  }
-  speak() {
-    console.log(`${this.name} says, No.`);
-  }
-}
+// class Cat extends Animal {
+//   constructor(name) {
+//     super(name);
+//   }
+//   speak() {
+//     console.log(`${this.name} says, No.`);
+//   }
+// }
 
-const bowser = new Dog("yipper");
-const kitty = new Cat("mememememe");
+// const bowser = new Dog("yipper");
+// const kitty = new Cat("mememememe");
 
-console.log(bowser);
-bowser.speak();
-console.log(kitty);
-kitty.speak();
+// console.log(bowser);
+// bowser.speak();
+// console.log(kitty);
+// kitty.speak();
 
 //===== Converting Constructors into Classes
 //== Classes are just Constructor Functions
@@ -148,9 +148,9 @@ const newKiwi = new Kiwi({
   calories: 0.7
 });
 
-console.log(newBanana.shipped("Alaska"));
+// console.log(newBanana.shipped("Alaska"));
 console.log(newKiwi.shipped("Colorado"));
-console.log(newBanana.checkIfMonkeysLikeIt());
-console.log(newKiwi.checkIfFuzzy());
-console.log(newBanana.calculateCals());
-console.log(newKiwi.calculateCals());
+// console.log(newBanana.checkIfMonkeysLikeIt());
+// console.log(newKiwi.checkIfFuzzy());
+// console.log(newBanana.calculateCals());
+// console.log(newKiwi.calculateCals());
