@@ -23,6 +23,9 @@ class Instructor extends Person {
   grade(student, subject) {
     return `${student.name} receives a perfect score on ${subject}`;
   }
+  changeGrade(grade) {
+    return Math.floor(Math.random(grade) * 100);
+  }
 }
 
 class Student extends Person {
@@ -31,6 +34,7 @@ class Student extends Person {
     this.previousBackground = props.previousBackground;
     this.className = props.className;
     this.favSubject = props.favSubject;
+    this.grade = props.grade;
   }
   listSubjects(favSubject) {
     return favSubject;
@@ -40,6 +44,13 @@ class Student extends Person {
   }
   sprintChallenge(subject) {
     return `${this.name} has begun sprint challenge on ${subject}`;
+  }
+  graduate(changeGrade) {
+    if (changeGrade >= 70) {
+      return "Yes!";
+    } else {
+      return "Nope";
+    }
   }
 }
 
@@ -77,14 +88,16 @@ const pebbles = new Student({
   name: "Pebbles",
   previousBackground: "Dinorider",
   className: "Slate Rock and Gravel",
-  favSubject: ["HTML", "CSS", "JavaScript"]
+  favSubject: ["HTML", "CSS", "JavaScript"],
+  grade: fred.changeGrade()
 });
 
 const bambam = new Student({
   name: "Bambam",
   previousBackground: "Rock Pounder",
   className: "Loyal Order of Water Buffalos",
-  favSubject: ["HTML", "CSS", "JavaScript"]
+  favSubject: ["HTML", "CSS", "JavaScript"],
+  grade: fred.changeGrade()
 });
 
 const barney = new ProjectManager({
@@ -99,20 +112,25 @@ const slate = new ProjectManager({
   favInstructor: "Rockhead Sylvester"
 });
 
+console.log(`/----------Instructors----------/`);
 console.log(`Instructor ${fred.name}'s favorite language is ${fred.favLanguage}.`);
 console.log(`Instructor ${wilma.name} likes to say: ${wilma.catchPhrase}`);
 console.log(fred.demo("JavaScript"));
 console.log(wilma.demo("CSS"));
 console.log(fred.grade(bambam, bambam.favSubject[0]));
 console.log(wilma.grade(pebbles, pebbles.favSubject[1]));
-console.log(`/--------------------------------------------------------------/`);
+console.log(`/----------Students----------/`);
 console.log(`${pebbles.name} used to be a ${pebbles.previousBackground}`);
 console.log(`${bambam.name} is in the ${bambam.className}`);
 console.log(pebbles.PRAssignment("Objects"));
 console.log(bambam.sprintChallenge("Array methods"));
-console.log(`/--------------------------------------------------------------/`);
+console.log(`/----------Program Managers----------/`);
 console.log(`${barney.name} is from the ${barney.gradClass} class`);
 console.log(`${slate.name}'s favorite instructor is ${slate.favInstructor}`);
 console.log(barney.standUp("Yabba Dabba Do"));
 console.log(slate.debugCode(pebbles.name, pebbles.favSubject[2]));
-console.log(`/-----------------------------stretch--------------------------/`);
+console.log(`/----------Stretch----------/`);
+console.log(`Pebbles' grade: ${pebbles.grade}`);
+console.log(`Does ${pebbles.name} graduate? ${pebbles.graduate(pebbles.grade)}`);
+console.log(`Bambam's grade: ${bambam.grade}`);
+console.log(`Does ${bambam.name} graduate? ${bambam.graduate(bambam.grade)}`);
